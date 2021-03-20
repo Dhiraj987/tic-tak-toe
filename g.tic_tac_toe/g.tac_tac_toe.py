@@ -23,11 +23,14 @@ def game():
 
     for i in range(10):
         printBoard(theBoard)
-        print("It's your turn, "+turn+". Where do you want to move it?\n Choose from 1 to 9"
+        print("It's your turn, "+turn+". Where do you want to move it?\n Choose from 1 to 9")
 
         move=input()
 
+        assert move in['1','2','3','4','5','6','7','8',['9']], 'Enter a valid position '+move+' is not between 1 and 9'
+        
         if theBoard[move]==' ':
+            print('\n\n')
             theBoard[move]=turn
             count+=1
         else:
